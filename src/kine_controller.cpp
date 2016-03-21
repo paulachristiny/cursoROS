@@ -34,7 +34,8 @@ int main (int argc, char **argv)
     //declaring node
     ros::NodeHandle node;
     //receive velocity
-    ros::Subscriber twist_sub = node.subscribe<geometry_msgs::Twist>("obstacle/Twist",1, speedCallBack);
+    //ros::Subscriber twist_sub = node.subscribe<geometry_msgs::Twist>("obstacle/Twist",1, speedCallBack);
+    ros::Subscriber twist_sub = node.subscribe<geometry_msgs::Twist>("go2point/robotSpeeds",1, speedCallBack);
     //Declare topic to be published
     pub_right = node.advertise<std_msgs::Float64>("vrep/vehicle/motorRightSpeed", 1);
     pub_left = node.advertise<std_msgs::Float64>("vrep/vehicle/motorLeftSpeed", 1);
